@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="flipace, neschkudla, javascript, react vienna, redux" />
+  <meta name="keywords" content="npm,javascript,whoport,command line,utility," />
 
 
 
@@ -80,15 +80,19 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="i love what i do">
-<meta property="og:url" content="http://neschkudla.at/archives/2016/index.html">
+<meta name="description" content="When developing web applications you start and kill various services which listen to some ports from time to time.
+Sometimes you end up with some port which is used by some process and you don’t know">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introducing "whoport"">
+<meta property="og:url" content="http://neschkudla.at/2016/04/29/Introducing-whoport/index.html">
 <meta property="og:site_name" content="i love what i do">
-<meta property="og:description">
+<meta property="og:description" content="When developing web applications you start and kill various services which listen to some ports from time to time.
+Sometimes you end up with some port which is used by some process and you don’t know">
+<meta property="og:updated_time" content="2016-04-28T23:59:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="i love what i do">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Introducing "whoport"">
+<meta name="twitter:description" content="When developing web applications you start and kill various services which listen to some ports from time to time.
+Sometimes you end up with some port which is used by some process and you don’t know">
 
 
 
@@ -106,7 +110,7 @@
   };
 </script>
 
-  <title> Archive | i love what i do </title>
+  <title> Introducing "whoport" | i love what i do </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -127,7 +131,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -205,66 +209,147 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      1 post.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Introducing "whoport"
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-29T01:38:16+02:00" content="2016-04-29">
+              2016-04-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/open-source/" itemprop="url" rel="index">
+                    <span itemprop="name">open source</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/29/Introducing-whoport/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/29/Introducing-whoport/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>When developing web applications you <em>start and kill various services which listen to some ports from time to time</em>.</p>
+<p>Sometimes you end up with some port which is <em>used by some process and you don’t know which one and would just like to kill it</em> in order to get on with your work.</p>
+<p>For this, I have built <strong>whoport</strong>.</p>
+<h2 id="What-it-does"><a href="#What-it-does" class="headerlink" title="What it does"></a>What it does</h2><p><strong>whoport</strong> is a simple command line utility which can be used to determine process ID(s) which listen to a given port number.<br>And you can even kill the process(es) with the command in one go.</p>
+<p>It’s tested on Windows, OSX and various Linux distributions.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -g whoport</span><br></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ whoport 80 <span class="comment"># will output process ids listening on port 80 and asks if you want to kill them</span></span><br><span class="line">$ whoport 80 -k <span class="comment"># kills processes which listen on port 80</span></span><br></pre></td></tr></table></figure>
+<h2 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h2><p>If you want to contribute or report some issues, head over to the <a href="https://github.com/flipace/whoport" target="_blank" rel="external">GitHub Repository</a>!</p>
+
+      
+    </div>
+    
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/npm/" rel="tag">#npm</a>
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+            <a href="/tags/whoport/" rel="tag">#whoport</a>
+          
+            <a href="/tags/command-line/" rel="tag">#command line</a>
+          
+            <a href="/tags/utility/" rel="tag">#utility</a>
+          
         </div>
       
-      
 
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/29/Introducing-whoport/" itemprop="url">
-              
-                <span itemprop="name">Introducing "whoport"</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-29T01:38:16+02:00"
-              content="2016-04-29" >
-          04-29
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -272,6 +357,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -291,8 +387,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -362,6 +467,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-it-does"><span class="nav-number">1.</span> <span class="nav-text">What it does</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribute"><span class="nav-number">4.</span> <span class="nav-text">Contribute</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -465,11 +581,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
@@ -487,9 +601,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'flipace';
-      var disqus_identifier = 'archives/2016/index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2016/04/29/Introducing-whoport/';
+      var disqus_title = 'Introducing "whoport"';
+      var disqus_url = 'http://neschkudla.at/2016/04/29/Introducing-whoport/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -500,6 +614,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
